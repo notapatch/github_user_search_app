@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+bin/tests-unit
+bin/tests-system
+bin/rubocop
+bin/security-audits
+
+echo "[ bin/ci ] Done"
