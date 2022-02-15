@@ -18,5 +18,20 @@ module GithubUserSearchApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |g|
+      g.assets false
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
+      g.helper false
+      g.jbuilder false
+      g.stylesheets false
+      g.test_framework :rspec
+
+      g.controller_specs false
+      g.helper_specs false
+      g.request_specs false
+      g.routing_specs false
+      g.view_specs false
+    end
   end
 end

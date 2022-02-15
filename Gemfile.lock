@@ -122,9 +122,6 @@ GEM
     io-wait (0.2.1)
     irb (1.4.1)
       reline (>= 0.3.0)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     jsbundling-rails (1.0.1)
       railties (>= 6.0.0)
     listen (3.7.1)
@@ -304,7 +301,6 @@ DEPENDENCIES
   factory_bot_rails
   ffaker
   hotwire-livereload (~> 1.0)
-  jbuilder
   jsbundling-rails
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
