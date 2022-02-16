@@ -41,3 +41,6 @@
 
 # Ignore ruby mine
 .idea/*
+
+# Ignore .env
+.env
