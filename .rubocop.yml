@@ -19,6 +19,10 @@ AllCops:
 Metrics/BlockLength:
   Enabled: false
 
+Rails/OutputSafety:
+  Exclude:
+    - app/helpers/svg_helper.rb
+
 RSpec/ExampleLength:
   Enabled: false
 
