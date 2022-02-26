@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  :root {
+    --accent:                hsl(212, 100%,  50%);
+    --accent--hover:         hsl(212, 100%,  69%);
+    --fill--accent:          hsl(  0,   0%, 100%);
+    --fill--base:            hsl(227, 100%,  98%);
+    --helper--danger:        hsl(  0,  91%,  62%);
+    --text--primary--button: hsl(  0,   0%, 100%);
+    --text--100:             hsl(217,  20%,  51%);
+    --text--100--hover:      hsl(220,  18%,  16%);
+    --text--200:             hsl(217,  35%,  45%);
+    --text--300:             hsl(217,  21%,  21%);
+    --text--400:             hsl(220,  18%,  16%);
+  }
+
+  .dark {
+    --accent:                hsl(212, 100%,  50%);
+    --accent--hover:         hsl(212, 100%,  69%);
+    --fill--accent:          hsl(222,  41%,  20%);
+    --fill--base:            hsl(220,  40%,  13%);
+    --helper--danger:        hsl(  0,  91%,  62%);
+    --text--primary--button: hsl(  0,   0%, 100%);
+    --text--100:             hsl(  0,   0%, 100%);
+    --text--100--hover:      hsl(222,  44%,  70%);
+    --text--200:             hsl(  0,   0%, 100%);
+    --text--300:             hsl(  0,   0%, 100%);
+    --text--400:             hsl(  0,   0%, 100%);
+  }
+}
+
+
