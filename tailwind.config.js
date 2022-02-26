@@ -40,7 +40,16 @@ module.exports = {
           400: 'var(--text--400)',
         },
       }
-    }
+    },
+    fontSize: {
+      xs: ["11px", { lineHeight: "16px" }],
+      sm: ["13px", { lineHeight: "25px" }],
+      base: ["15px", { lineHeight: "25px" }],
+      lg: ["16px", { lineHeight: "23.7px" }],
+      xl: ["18px", { lineHeight: "25px" }],
+      "2xl": ["22px", { lineHeight: "32px" }],
+      "3xl": ["26px", { lineHeight: "38.51px" }],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
