@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -20,6 +22,9 @@ module.exports = {
             danger: 'var(--helper--danger)',
           }
         }
+      },
+      fontFamily: {
+        mono: ['Space Mono', ...defaultTheme.fontFamily.mono]
       },
       textColor: {
         skin: {
