@@ -8,18 +8,6 @@ export default class extends Controller {
     console.log("visibility controller")
   }
 
-  showTargets() {
-    this.hideableTargets.forEach(el => {
-      el.classList.remove("hidden")
-    });
-  }
-
-  hideTargets() {
-    this.hideableTargets.forEach(el => {
-      el.classList.add("hidden")
-    });
-  }
-
   toggleTargets() {
     this.hideableTargets.forEach((el) => {
       el.classList.toggle("hidden")
