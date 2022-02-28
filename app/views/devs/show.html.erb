@@ -1,6 +1,25 @@
-<header class="flex justify-between items-center">
-  <h1 class="text-3xl font-bold">devfinder</h1>
-  <div>
-    Light
+<main data-controller="mode-switch visibility"
+      data-mode-switch-dark-class="dark"
+      data-mode-switch-target="darkModeRoot"
+      class="dark bg-skin-fill-base">
+  <div class="mx-auto max-w-[730px] px-6 pt-7 bg-skin-fill-base h-screen">
+    <header class="flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-skin-400">devfinder</h1>
+      <button
+        data-action="mode-switch#toggle visibility#toggleTargets"
+        data-visibility-target="hideable"
+        class="flex gap-x-4 text-skin-100 hover:text-skin-100--hover">
+        LIGHT
+        <%= show_svg "icon-sun.svg" %>
+      </button>
+      <button
+        data-action="mode-switch#toggle visibility#toggleTargets"
+        data-visibility-target="hideable"
+        class="hidden flex gap-x-4 text-skin-100 hover:text-skin-100--hover">
+        DARK <%= show_svg "icon-moon.svg" %>
+      </button>
+    </header>
   </div>
-</header>
+
+
+</main>
