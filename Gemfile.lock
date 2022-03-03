@@ -270,6 +270,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     uniform_notifier (1.14.2)
+    vcr (6.0.0)
     view_component (2.49.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
@@ -324,6 +325,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
+  vcr
   view_component
   web-console
   webdrivers
