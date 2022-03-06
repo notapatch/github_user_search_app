@@ -1,3 +1,7 @@
 class DevsController < ApplicationController
-  def show; end
+  def show
+    return @dev = Dev.new unless params[:search]
+
+    @dev = Dev.new
+  end
 end

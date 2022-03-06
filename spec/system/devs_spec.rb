@@ -15,4 +15,14 @@ RSpec.describe "Devs", type: :system do
 
     expect(page).to have_css(".dark")
   end
+
+  it "can return records" do
+    visit root_path
+
+    fill_in "search", with: "octocat"
+
+    click_on "Search"
+
+    expect(page).to have_selector "h2", text: "The Octocat"
+  end
 end
