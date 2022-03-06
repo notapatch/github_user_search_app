@@ -17,12 +17,14 @@ RSpec.describe "Devs", type: :system do
   end
 
   it "can return records" do
-    visit root_path
+    VCR.use_cassette "can return records" do
+      visit root_path
 
-    fill_in "search", with: "octocat"
+      fill_in "search", with: "octocat"
 
-    click_on "Search"
+      click_on "Search"
 
-    expect(page).to have_selector "h2", text: "The Octocat"
+      expect(page).to have_selector "h2", text: "The Octocat"
+    end
   end
 end

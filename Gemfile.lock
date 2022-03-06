@@ -111,6 +111,10 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faraday (2.2.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.1)
     ffaker (2.20.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -243,6 +247,7 @@ GEM
     rubocop-rspec (2.8.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
@@ -307,6 +312,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
+  faraday
   ffaker
   hotwire-livereload (~> 1.0)
   jsbundling-rails
