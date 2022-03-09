@@ -1,8 +1,13 @@
 class DevsController < ApplicationController
   def show
-    return @dev = Dev.new unless params[:search]
+    @dev = Dev.new
+    return unless params[:search]
 
-    response = GithubApi::V3::Client.new.users(params[:search])
-    @dev = Dev.new(**response)
+    begin
+      response = GithubApi::V3::Client.new.users(params[:search])
+      @dev = Dev.new(**response)
+    rescue ApiExceptions::NotFoundError
+      @dev.errors.add(:name, message: "No results")
+    end
   end
 end

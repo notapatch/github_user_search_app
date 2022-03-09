@@ -27,4 +27,16 @@ RSpec.describe "Devs", type: :system do
       expect(page).to have_selector "h2", text: "The Octocat"
     end
   end
+
+  it "shows error when user unknown" do
+    VCR.use_cassette "shows error when user unknown" do
+      visit root_path
+
+      fill_in "search", with: "nobody_on_github"
+
+      click_on "Search"
+
+      expect(page).to have_selector "li", text: "No results"
+    end
+  end
 end

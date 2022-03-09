@@ -26,6 +26,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - app/models/dev.rb
+    - spec/**/*_spec.rb
 
 Metrics/MethodLength:
   Exclude:
@@ -43,6 +44,10 @@ RSpec/MultipleExpectations:
 
 Style/Documentation:
   Enabled: false
+
+Style/HashSyntax:
+  Exclude:
+    - spec/apis/github_api/v3/client_spec.rb
 
 Style/FrozenStringLiteralComment:
   Enabled: false
