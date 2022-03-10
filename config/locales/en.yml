@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  date:
+    formats:
+      short_day_short_month_long_year: "%e %b %Y"
