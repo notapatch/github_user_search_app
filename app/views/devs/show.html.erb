@@ -37,6 +37,7 @@
               </ul>
             <% end  %>
             <%= f.text_field :search,
+                             value: params[:search],
                              class:"block border-0 focus:ring-0 w-full rounded-none rounded-l-md pl-10 text-sm text-skin-200 bg-skin-fill-accent border-0 placeholder:text-skin-200",
                              placeholder: "Search Github username" %>
           </div>
