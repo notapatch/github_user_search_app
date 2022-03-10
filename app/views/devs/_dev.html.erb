@@ -1,4 +1,78 @@
-<div class="text-3xl text-white">
-  <h2><%= dev.name %></h2>
-  followers <%= dev.followers %>
+<div class="pt-8 pb-12 px-6 text-white bg-skin-fill-accent rounded-xl">
+  <div class="grid grid-cols-profile gap-x-5">
+    <div>
+      <%= image_tag dev.avatar_url, class: "inline-block h-17.5 w-17.5 rounded-full" %>
+    </div>
+    <div>
+      <h2 class="text-lg font-bold text-skin-300"><%= display_name(dev) %></h2>
+      <h3 class="text-sm font-medium text-skin-accent">@<%= dev.login %></h3>
+      <p class="mt-1.5 text-sm text-skin-100">Joined <%= l dev.joined, format: :short_day_short_month_long_year %></p>
+    </div>
+
+    <div class="col-span-2 mt-8 lg:col-span-1 lg:col-start-2 lg:mt-5">
+      <p class="text-skin-200"><%= dev.bio %></p>
+
+      <div class="mt-6 bg-skin-fill-base rounded-xl">
+        <dl class="grid grid-cols-3 py-4 px-4 md:px-8 text-center md:text-left">
+          <div>
+            <dt class="text-skin-200">Repos </dt>
+            <dd class="mt-2 text-skin-300"><%= dev.public_repos %></dd>
+          </div>
+          <div>
+            <dt class="text-skin-200">Followers</dt>
+            <dl class="mt-2 text-skin-300"><%= dev.followers %></dl>
+          </div>
+          <div>
+            <dt class="text-skin-200">Following</dt>
+            <dl class="mt-2 text-skin-300"><%= dev.following %></dl>
+          </div>
+        </dl>
+      </div>
+
+      <div class="grid gap-y-4 mt-6 md:gap-x-4 md:grid-cols-2">
+        <div class="md:order-1 flex">
+          <div class="mr-4 flex-shrink-0">
+            <div class="text-skin-200"><%= show_svg "icon-location.svg" %></div>
+          </div>
+          <div>
+            <p><%= link_to dev.location, "#" %></p>
+          </div>
+        </div>
+
+        <div class="md:order-3 flex">
+          <div class="mr-4 flex-shrink-0">
+            <div class="text-skin-200"><%= show_svg "icon-website.svg" %></div>
+          </div>
+          <div>
+            <p><%= link_to dev.blog, dev.blog %></p>
+          </div>
+        </div>
+
+        <div class="md:order-2 flex">
+          <div class="mr-4 flex-shrink-0">
+            <div class="text-skin-200"><%= show_svg "icon-twitter.svg" %></div>
+          </div>
+          <div>
+            <p><%= link_to dev.twitter_username, "https://twitter.com/#{dev.twitter_username}" %></p>
+          </div>
+        </div>
+
+        <div class="md:order-4 flex">
+          <div class="mr-4 flex-shrink-0">
+            <div class="text-skin-200"><%= show_svg "icon-company.svg" %></div>
+          </div>
+          <div>
+            <p><%= link_to dev.company, "https://github.com/#{"bcs-io"}" %></p>
+          </div>
+        </div>
+      </div> <!-- grid -->
+
+
+    </div>
+  </div>
+
+
+
+
+
 </div>

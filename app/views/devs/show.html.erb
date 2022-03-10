@@ -2,7 +2,7 @@
       data-mode-switch-dark-class="dark"
       data-mode-switch-target="darkModeRoot"
       class="dark bg-skin-fill-base">
-  <div class="mx-auto max-w-[730px] px-6 pt-7 bg-skin-fill-base h-screen">
+  <div class="mx-auto max-w-[778px] px-6 pt-7 bg-skin-fill-base h-screen">
     <header class="flex justify-between items-center">
       <h1 class="text-3xl font-bold text-skin-400">devfinder</h1>
       <button
@@ -37,7 +37,7 @@
               </ul>
             <% end  %>
             <%= f.text_field :q,
-                             class:"block border-0 focus:ring-0 w-full rounded-none rounded-l-md pl-10 text-sm text-skin-200 bg-skin-fill-accent border-0 placeholder:text-skin-200",
+                             class:"block border-0 focus:ring-0 w-full rounded-none rounded-l-md pl-14 text-sm text-skin-200 bg-skin-fill-accent border-0 placeholder:text-skin-200",
                              placeholder: "Search Github username" %>
           </div>
           <%= f.submit "Search",
@@ -46,7 +46,9 @@
       <% end %>
     </div>
     <% if @dev.valid? %>
-      <%= render partial: "devs/dev", locals: { dev: @dev } %>
+      <div class="mt-4">
+        <%= render partial: "devs/dev", locals: { dev: @dev } %>
+      </div>
     <% end %>
   </div>
 </main>
