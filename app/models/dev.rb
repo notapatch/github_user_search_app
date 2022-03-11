@@ -1,6 +1,8 @@
 class Dev
   include ActiveModel::Model
 
+  validates :login, presence: true
+
   attr_accessor :avatar_url,
                 :bio,
                 :blog,

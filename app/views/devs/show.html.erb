@@ -45,6 +45,8 @@
         </div>
       <% end %>
     </div>
+    <% if @dev.valid? %>
+      <%= render partial: "devs/dev", locals: { dev: @dev } %>
+    <% end %>
   </div>
-  <%= render partial: "devs/dev", locals: { dev: @dev } %>
 </main>
