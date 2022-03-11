@@ -30,6 +30,7 @@ Metrics/BlockLength:
 
 Metrics/MethodLength:
   Exclude:
+    - app/controllers/devs_controller.rb
     - app/models/dev.rb
 
 Rails/OutputSafety:

@@ -38,6 +38,8 @@ module GithubApi
 
         def error_class
           case @response.status
+          when HTTP_FORBIDDEN_CODE
+            ForbiddenError
           when HTTP_NOT_FOUND_CODE
             NotFoundError
           end

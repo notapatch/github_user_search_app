@@ -18,6 +18,22 @@ module GithubApi
         expect(response["name"]).to eq "The Octocat"
       end
 
+      it "returns error when rate limited" do
+        expect do
+          stubs = Faraday::Adapter::Test::Stubs.new do |stub|
+            stub.get("users/octocat") do |_env|
+              [
+                403,
+                { "Content-Type" => "application/json" },
+                File.read("spec/fixtures/github_api/v3/users/403.json")
+              ]
+            end
+          end
+
+          described_class.new(adapter: :test, stubs: stubs).users("octocat")
+        end.to raise_error(ApiExceptions::ForbiddenError)
+      end
+
       it "returns error for unknown user" do
         expect do
           stubs = Faraday::Adapter::Test::Stubs.new do |stub|
