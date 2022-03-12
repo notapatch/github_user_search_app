@@ -65,6 +65,22 @@ module GithubApi
           described_class.new(adapter: :test, stubs: stubs).users("nobody_on_github")
         end.to raise_error(ApiExceptions::NotFoundError)
       end
+
+      it "returns general error if unknown http status" do
+        expect do
+          stubs = Faraday::Adapter::Test::Stubs.new do |stub|
+            stub.get("users/nobody_on_github") do |_env|
+              [
+                418, # I'm a teapot
+                { "Content-Type" => "application/json" },
+                File.read("spec/fixtures/github_api/v3/users/404.json")
+              ]
+            end
+          end
+
+          described_class.new(adapter: :test, stubs: stubs).users("nobody_on_github")
+        end.to raise_error(ApiExceptions::ApiError)
+      end
     end
   end
 end

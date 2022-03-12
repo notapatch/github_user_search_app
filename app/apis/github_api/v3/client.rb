@@ -47,6 +47,8 @@ module GithubApi
             ForbiddenError
           when HTTP_NOT_FOUND_CODE
             NotFoundError
+          else
+            ApiError
           end
         end
 
