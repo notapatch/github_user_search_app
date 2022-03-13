@@ -28,6 +28,9 @@ module.exports = {
       fontFamily: {
         mono: ['Space Mono', ...defaultTheme.fontFamily.mono]
       },
+      gridTemplateColumns: {
+        'profile': 'auto 1fr'
+      },
       textColor: {
         skin: {
           accent: 'var(--accent)',
