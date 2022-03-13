@@ -31,6 +31,9 @@ module.exports = {
       gridTemplateColumns: {
         'profile': 'auto 1fr'
       },
+      spacing: {
+        '17.5': '4.375rem',
+      },
       textColor: {
         skin: {
           accent: 'var(--accent)',
