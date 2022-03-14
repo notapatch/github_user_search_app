@@ -39,4 +39,19 @@ RSpec.describe "Devs", type: :system do
       expect(page).to have_selector "li", text: "No results"
     end
   end
+
+  it "shows unauthorized error for bad token" do
+    VCR.use_cassette "shows unauthorized error for bad token" do
+      allow(ENV).to receive(:[])
+      allow(ENV).to receive(:[]).with("AUTHENTICATION_TOKEN").and_return("ghp_012345678901234567890123456789")
+
+      visit root_path
+
+      fill_in "Search", with: "octocat"
+
+      click_on "Search"
+
+      expect(page).to have_selector "li", text: "Authorization failed"
+    end
+  end
 end

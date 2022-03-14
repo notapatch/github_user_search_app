@@ -6,8 +6,10 @@ class DevsController < ApplicationController
     @search_query = SearchQuery.new(q: search_query)
 
     begin
-      response = GithubApi::V3::Client.new.users(search_query)
+      response = GithubApi::V3::Client.new(ENV["AUTHENTICATION_TOKEN"]).users(search_query)
       @dev = Dev.new(**response)
+    rescue ApiExceptions::UnauthorizedError
+      @dev.errors.add(:name, message: "Authorization failed")
     rescue ApiExceptions::ForbiddenError
       @dev.errors.add(:name, message: "API rate limit exceeded")
     rescue ApiExceptions::NotFoundError

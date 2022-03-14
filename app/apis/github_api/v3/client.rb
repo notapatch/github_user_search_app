@@ -5,7 +5,10 @@ module GithubApi
     class Client
       API_ENDPOINT = "https://api.github.com".freeze
 
-      def initialize(adapter: Faraday.default_adapter, stubs: nil)
+      attr_reader :oauth_token
+
+      def initialize(oauth_token = nil, adapter: Faraday.default_adapter, stubs: nil)
+        @oauth_token = oauth_token
         @adapter = adapter
         @stubs = stubs
       end
@@ -38,6 +41,8 @@ module GithubApi
 
         def error_class
           case @response.status
+          when HTTP_UNAUTHORIZED_CODE
+            UnauthorizedError
           when HTTP_FORBIDDEN_CODE
             ForbiddenError
           when HTTP_NOT_FOUND_CODE
@@ -55,6 +60,7 @@ module GithubApi
           f.request :json
           f.response :json
           f.adapter @adapter, @stubs
+          f.headers["Authorization"] = "token #{@oauth_token}" if @oauth_token.present?
         end
       end
     end
