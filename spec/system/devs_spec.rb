@@ -20,7 +20,7 @@ RSpec.describe "Devs", type: :system do
     VCR.use_cassette "can return records" do
       visit root_path
 
-      fill_in "search", with: "octocat"
+      fill_in "Search", with: "octocat"
 
       click_on "Search"
 
@@ -32,7 +32,7 @@ RSpec.describe "Devs", type: :system do
     VCR.use_cassette "shows error when user unknown" do
       visit root_path
 
-      fill_in "search", with: "nobody_on_github"
+      fill_in "Search", with: "nobody_on_github"
 
       click_on "Search"
 
