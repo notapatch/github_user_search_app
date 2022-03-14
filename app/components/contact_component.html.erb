@@ -1,0 +1,14 @@
+<div class="flex <%= @available ? " opacity-100" : " opacity-75 " %>">
+  <div class="mr-4 flex-shrink-0">
+    <div class="text-skin-200"><%= show_svg @svg %></div>
+  </div>
+  <% if @available %>
+    <div>
+      <p><%= content %></p>
+    </div>
+  <% else %>
+    <div>
+      <p><%= @missing_msg %></p>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<div class="text-skin-200 <%= @available ? " opacity-100" : " opacity-75 " %>">
+  <% if @available %>
+    <p><%= content %></p>
+  <% else %>
+    <p><%= @missing_msg %></p>
+  <% end %>
+</div>

@@ -10,7 +10,10 @@
     </div>
 
     <div class="col-span-2 mt-8 lg:col-span-1 lg:col-start-2 lg:mt-5">
-      <p class="text-skin-200"><%= dev.bio %></p>
+      <%= render(OptionalComponent.new(available: dev.bio.present?,
+                                       missing_msg: "This profile has no bio")) do %>
+        <%= dev.bio %>
+      <% end %>
 
       <div class="mt-6 bg-skin-fill-base rounded-xl">
         <dl class="grid grid-cols-3 py-4 px-4 md:px-8 text-center md:text-left">
@@ -30,44 +33,30 @@
       </div>
 
       <div class="grid gap-y-4 mt-6 md:gap-x-4 md:grid-cols-2">
-        <div class="md:order-1 flex">
-          <div class="mr-4 flex-shrink-0">
-            <div class="text-skin-200"><%= show_svg "icon-location.svg" %></div>
-          </div>
-          <div>
-            <p><%= link_to dev.location, "#" %></p>
-          </div>
+        <div class="md:order-1">
+          <%= render(ContactComponent.new(svg: "icon-location.svg", available: dev.location.present?)) do %>
+            <%= link_to dev.location, "#" %>
+          <% end %>
         </div>
 
-        <div class="md:order-3 flex">
-          <div class="mr-4 flex-shrink-0">
-            <div class="text-skin-200"><%= show_svg "icon-website.svg" %></div>
-          </div>
-          <div>
-            <p><%= link_to dev.blog, dev.blog %></p>
-          </div>
+        <div class="md:order-3">
+          <%= render(ContactComponent.new(svg: "icon-website.svg", available: dev.blog.present?)) do %>
+            <%= link_to dev.blog, dev.blog %>
+          <% end %>
         </div>
 
-        <div class="md:order-2 flex">
-          <div class="mr-4 flex-shrink-0">
-            <div class="text-skin-200"><%= show_svg "icon-twitter.svg" %></div>
-          </div>
-          <div>
-            <p><%= link_to dev.twitter_username, "https://twitter.com/#{dev.twitter_username}" %></p>
-          </div>
+        <div class="md:order-2">
+          <%= render(ContactComponent.new(svg: "icon-twitter.svg", available: dev.twitter_username.present?)) do %>
+            <%= link_to dev.twitter_username, "https://twitter.com/#{dev.twitter_username}" %>
+          <% end %>
         </div>
 
-        <div class="md:order-4 flex">
-          <div class="mr-4 flex-shrink-0">
-            <div class="text-skin-200"><%= show_svg "icon-company.svg" %></div>
-          </div>
-          <div>
-            <p><%= link_to dev.company, "https://github.com/#{"bcs-io"}" %></p>
-          </div>
+        <div class="md:order-4">
+          <%= render(ContactComponent.new(svg: "icon-company.svg", available: dev.company.present?)) do %>
+            <%= link_to dev.company, "https://github.com/#{'The linux'}" %>
+          <% end %>
         </div>
       </div> <!-- grid -->
-
-
     </div>
   </div>
 

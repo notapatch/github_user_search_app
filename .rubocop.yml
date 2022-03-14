@@ -20,6 +20,11 @@ Lint/EmptyBlock:
   Exclude:
     - spec/factories/devs.rb
 
+Lint/MissingSuper:
+  Exclude:
+    - app/components/contact_component.rb
+    - app/components/optional_component.rb
+
 Metrics/AbcSize:
   Enabled: false
 
