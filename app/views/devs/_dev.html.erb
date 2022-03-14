@@ -53,7 +53,7 @@
 
         <div class="md:order-4">
           <%= render(ContactComponent.new(svg: "icon-company.svg", available: dev.company.present?)) do %>
-            <%= link_to dev.company, "https://github.com/#{'The linux'}" %>
+            <%= link_to dev.company, "https://github.com/#{clear_mention(dev.company)}" %>
           <% end %>
         </div>
       </div> <!-- grid -->
