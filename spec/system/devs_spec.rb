@@ -2,33 +2,43 @@ require "rails_helper"
 
 RSpec.describe "Devs", type: :system do
   it "can switch modes", js: true do
-    visit root_path
+    VCR.use_cassette "can switch modes" do
+      visit root_path
 
-    expect(page).to have_selector "h1", text: "devfinder"
-    expect(page).to have_css(".dark")
+      expect(page).to have_selector "h1", text: "devfinder"
+      expect(page).to have_css(".dark")
 
-    click_on "LIGHT"
+      click_on "LIGHT"
 
-    expect(page).not_to have_css(".dark")
+      expect(page).not_to have_css(".dark")
 
-    click_on "DARK"
+      click_on "DARK"
 
-    expect(page).to have_css(".dark")
+      expect(page).to have_css(".dark")
+    end
+  end
+
+  it "shows octocat on startup" do
+    VCR.use_cassette "shows octocat on startup" do
+      visit root_path
+
+      expect(page).to have_selector "h2", text: "The Octocat"
+    end
   end
 
   it "can return records" do
     VCR.use_cassette "can return records" do
       visit root_path
 
-      fill_in "Search", with: "octocat"
+      fill_in "Search", with: "torvalds"
 
       click_on "Search"
 
-      expect(page).to have_selector "h2", text: "The Octocat"
+      expect(page).to have_selector "h2", text: "Linus Torvalds"
     end
   end
 
-  it "shows error when user unknown" do
+  it "shows error and last search results when user unknown" do
     VCR.use_cassette "shows error when user unknown" do
       visit root_path
 
@@ -37,6 +47,7 @@ RSpec.describe "Devs", type: :system do
       click_on "Search"
 
       expect(page).to have_selector "li", text: "No results"
+      expect(page).to have_selector "h2", text: "The Octocat"
     end
   end
 
@@ -46,10 +57,6 @@ RSpec.describe "Devs", type: :system do
       allow(ENV).to receive(:[]).with("AUTHENTICATION_TOKEN").and_return("ghp_012345678901234567890123456789")
 
       visit root_path
-
-      fill_in "Search", with: "octocat"
-
-      click_on "Search"
 
       expect(page).to have_selector "li", text: "Authorization failed"
     end

@@ -2,11 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/users/nobody_on_github
+    uri: https://api.github.com/users/
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token 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
       User-Agent:
       - Faraday v2.2.0
       Accept-Encoding:
@@ -21,11 +23,29 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Wed, 09 Mar 2022 09:38:13 GMT
+      - Sun, 13 Mar 2022 22:54:23 GMT
       Content-Type:
       - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - repo
+      Github-Authentication-Token-Expiration:
+      - 2022-03-31 21:35:53 UTC
       X-Github-Media-Type:
       - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4986'
+      X-Ratelimit-Reset:
+      - '1647214070'
+      X-Ratelimit-Used:
+      - '14'
+      X-Ratelimit-Resource:
+      - core
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
@@ -47,22 +67,247 @@ http_interactions:
       - default-src 'none'
       Vary:
       - Accept-Encoding, Accept, X-Requested-With
+      X-Github-Request-Id:
+      - DE71:2C85:640C9CC:65CB18E:622E761F
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Not Found","documentation_url":"https://docs.github.com/rest"}'
+  recorded_at: Sun, 13 Mar 2022 22:54:00 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/octocat
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - token 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
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 13 Mar 2022 22:54:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"b28419ce58a5b472c82d600a8cfc7af705ec3fdd614c78fad70396f151a97fac"
+      Last-Modified:
+      - Tue, 22 Feb 2022 15:07:13 GMT
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Github-Authentication-Token-Expiration:
+      - 2022-03-31 21:35:53 UTC
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '59'
+      - '4985'
       X-Ratelimit-Reset:
-      - '1646822292'
+      - '1647214070'
+      X-Ratelimit-Used:
+      - '15'
       X-Ratelimit-Resource:
       - core
-      X-Ratelimit-Used:
-      - '1'
-      Content-Length:
-      - '108'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
       X-Github-Request-Id:
-      - F9FF:6BA5:153D710:1652E98:62287584
+      - DE72:86A4:2A2B16A:2C78244:622E761F
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"octocat","id":583231,"node_id":"MDQ6VXNlcjU4MzIzMQ==","avatar_url":"https://avatars.githubusercontent.com/u/583231?v=4","gravatar_id":"","url":"https://api.github.com/users/octocat","html_url":"https://github.com/octocat","followers_url":"https://api.github.com/users/octocat/followers","following_url":"https://api.github.com/users/octocat/following{/other_user}","gists_url":"https://api.github.com/users/octocat/gists{/gist_id}","starred_url":"https://api.github.com/users/octocat/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/octocat/subscriptions","organizations_url":"https://api.github.com/users/octocat/orgs","repos_url":"https://api.github.com/users/octocat/repos","events_url":"https://api.github.com/users/octocat/events{/privacy}","received_events_url":"https://api.github.com/users/octocat/received_events","type":"User","site_admin":false,"name":"The
+        Octocat","company":"@github","blog":"https://github.blog","location":"San
+        Francisco","email":"octocat@github.com","hireable":null,"bio":null,"twitter_username":null,"public_repos":8,"public_gists":8,"followers":5204,"following":9,"created_at":"2011-01-25T18:44:36Z","updated_at":"2022-02-22T15:07:13Z"}'
+  recorded_at: Sun, 13 Mar 2022 22:54:01 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/nobody_on_github
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - token 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
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 13 Mar 2022 22:54:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Github-Authentication-Token-Expiration:
+      - 2022-03-31 21:35:53 UTC
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4984'
+      X-Ratelimit-Reset:
+      - '1647214070'
+      X-Ratelimit-Used:
+      - '16'
+      X-Ratelimit-Resource:
+      - core
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      Vary:
+      - Accept-Encoding, Accept, X-Requested-With
+      X-Github-Request-Id:
+      - DE73:4C46:75B363:78853E:622E7620
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Not Found","documentation_url":"https://docs.github.com/rest/reference/users#get-a-user"}'
-  recorded_at: Wed, 09 Mar 2022 09:38:03 GMT
+  recorded_at: Sun, 13 Mar 2022 22:54:01 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/octocat
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - token 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
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 13 Mar 2022 22:54:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"b28419ce58a5b472c82d600a8cfc7af705ec3fdd614c78fad70396f151a97fac"
+      Last-Modified:
+      - Tue, 22 Feb 2022 15:07:13 GMT
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Github-Authentication-Token-Expiration:
+      - 2022-03-31 21:35:53 UTC
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4983'
+      X-Ratelimit-Reset:
+      - '1647214070'
+      X-Ratelimit-Used:
+      - '17'
+      X-Ratelimit-Resource:
+      - core
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - DE74:13D71:171E8DF:18D163C:622E7620
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"octocat","id":583231,"node_id":"MDQ6VXNlcjU4MzIzMQ==","avatar_url":"https://avatars.githubusercontent.com/u/583231?v=4","gravatar_id":"","url":"https://api.github.com/users/octocat","html_url":"https://github.com/octocat","followers_url":"https://api.github.com/users/octocat/followers","following_url":"https://api.github.com/users/octocat/following{/other_user}","gists_url":"https://api.github.com/users/octocat/gists{/gist_id}","starred_url":"https://api.github.com/users/octocat/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/octocat/subscriptions","organizations_url":"https://api.github.com/users/octocat/orgs","repos_url":"https://api.github.com/users/octocat/repos","events_url":"https://api.github.com/users/octocat/events{/privacy}","received_events_url":"https://api.github.com/users/octocat/received_events","type":"User","site_admin":false,"name":"The
+        Octocat","company":"@github","blog":"https://github.blog","location":"San
+        Francisco","email":"octocat@github.com","hireable":null,"bio":null,"twitter_username":null,"public_repos":8,"public_gists":8,"followers":5204,"following":9,"created_at":"2011-01-25T18:44:36Z","updated_at":"2022-02-22T15:07:13Z"}'
+  recorded_at: Sun, 13 Mar 2022 22:54:01 GMT
 recorded_with: VCR 6.0.0

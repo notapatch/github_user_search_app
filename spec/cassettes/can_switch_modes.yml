@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 13 Mar 2022 22:52:15 GMT
+      - Sun, 13 Mar 2022 22:53:29 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -39,11 +39,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4991'
+      - '4988'
       X-Ratelimit-Reset:
       - '1647214070'
       X-Ratelimit-Used:
-      - '9'
+      - '12'
       X-Ratelimit-Resource:
       - core
       Access-Control-Expose-Headers:
@@ -68,11 +68,11 @@ http_interactions:
       Vary:
       - Accept-Encoding, Accept, X-Requested-With
       X-Github-Request-Id:
-      - DCED:1117A:786B008:7A5422E:622E759F
+      - DDCE:271F:B33393D:B5FAFB3:622E75E9
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Not Found","documentation_url":"https://docs.github.com/rest"}'
-  recorded_at: Sun, 13 Mar 2022 22:51:52 GMT
+  recorded_at: Sun, 13 Mar 2022 22:53:06 GMT
 - request:
     method: get
     uri: https://api.github.com/users/octocat
@@ -96,7 +96,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 13 Mar 2022 22:52:16 GMT
+      - Sun, 13 Mar 2022 22:53:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -121,11 +121,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4990'
+      - '4987'
       X-Ratelimit-Reset:
       - '1647214070'
       X-Ratelimit-Used:
-      - '10'
+      - '13'
       X-Ratelimit-Resource:
       - core
       Access-Control-Expose-Headers:
@@ -148,92 +148,11 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DCFA:2C85:64014C4:65BF970:622E759F
+      - DDCF:271D:3F324BD:4157026:622E75EA
     body:
       encoding: ASCII-8BIT
       string: '{"login":"octocat","id":583231,"node_id":"MDQ6VXNlcjU4MzIzMQ==","avatar_url":"https://avatars.githubusercontent.com/u/583231?v=4","gravatar_id":"","url":"https://api.github.com/users/octocat","html_url":"https://github.com/octocat","followers_url":"https://api.github.com/users/octocat/followers","following_url":"https://api.github.com/users/octocat/following{/other_user}","gists_url":"https://api.github.com/users/octocat/gists{/gist_id}","starred_url":"https://api.github.com/users/octocat/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/octocat/subscriptions","organizations_url":"https://api.github.com/users/octocat/orgs","repos_url":"https://api.github.com/users/octocat/repos","events_url":"https://api.github.com/users/octocat/events{/privacy}","received_events_url":"https://api.github.com/users/octocat/received_events","type":"User","site_admin":false,"name":"The
         Octocat","company":"@github","blog":"https://github.blog","location":"San
         Francisco","email":"octocat@github.com","hireable":null,"bio":null,"twitter_username":null,"public_repos":8,"public_gists":8,"followers":5204,"following":9,"created_at":"2011-01-25T18:44:36Z","updated_at":"2022-02-22T15:07:13Z"}'
-  recorded_at: Sun, 13 Mar 2022 22:51:53 GMT
-- request:
-    method: get
-    uri: https://api.github.com/users/torvalds
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - token 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
-      User-Agent:
-      - Faraday v2.2.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - GitHub.com
-      Date:
-      - Sun, 13 Mar 2022 22:52:16 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Cache-Control:
-      - private, max-age=60, s-maxage=60
-      Vary:
-      - Accept, Authorization, Cookie, X-GitHub-OTP
-      - Accept-Encoding, Accept, X-Requested-With
-      Etag:
-      - W/"6de34cb1c629c18f4b67633295548d781a0dc269d104064be7fc833a58d5a845"
-      Last-Modified:
-      - Fri, 20 Aug 2021 23:59:05 GMT
-      X-Oauth-Scopes:
-      - ''
-      X-Accepted-Oauth-Scopes:
-      - ''
-      Github-Authentication-Token-Expiration:
-      - 2022-03-31 21:35:53 UTC
-      X-Github-Media-Type:
-      - github.v3; format=json
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4989'
-      X-Ratelimit-Reset:
-      - '1647214070'
-      X-Ratelimit-Used:
-      - '11'
-      X-Ratelimit-Resource:
-      - core
-      Access-Control-Expose-Headers:
-      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
-        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
-        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
-        X-GitHub-Request-Id, Deprecation, Sunset
-      Access-Control-Allow-Origin:
-      - "*"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubdomains; preload
-      X-Frame-Options:
-      - deny
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - '0'
-      Referrer-Policy:
-      - origin-when-cross-origin, strict-origin-when-cross-origin
-      Content-Security-Policy:
-      - default-src 'none'
-      X-Github-Request-Id:
-      - DCFB:334C:4A71B56:4BBB35D:622E75A0
-    body:
-      encoding: ASCII-8BIT
-      string: '{"login":"torvalds","id":1024025,"node_id":"MDQ6VXNlcjEwMjQwMjU=","avatar_url":"https://avatars.githubusercontent.com/u/1024025?v=4","gravatar_id":"","url":"https://api.github.com/users/torvalds","html_url":"https://github.com/torvalds","followers_url":"https://api.github.com/users/torvalds/followers","following_url":"https://api.github.com/users/torvalds/following{/other_user}","gists_url":"https://api.github.com/users/torvalds/gists{/gist_id}","starred_url":"https://api.github.com/users/torvalds/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/torvalds/subscriptions","organizations_url":"https://api.github.com/users/torvalds/orgs","repos_url":"https://api.github.com/users/torvalds/repos","events_url":"https://api.github.com/users/torvalds/events{/privacy}","received_events_url":"https://api.github.com/users/torvalds/received_events","type":"User","site_admin":false,"name":"Linus
-        Torvalds","company":"Linux Foundation","blog":"","location":"Portland, OR","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":6,"public_gists":0,"followers":154166,"following":0,"created_at":"2011-09-03T15:26:22Z","updated_at":"2021-08-20T23:59:05Z"}'
-  recorded_at: Sun, 13 Mar 2022 22:51:53 GMT
+  recorded_at: Sun, 13 Mar 2022 22:53:07 GMT
 recorded_with: VCR 6.0.0
